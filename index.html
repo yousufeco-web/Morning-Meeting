@@ -645,7 +645,9 @@
 
         studentState.forEach(student => {
             const img = document.createElement('img');
-            const cleanName = student.name.trim().toLowerCase().replace(/\s+/g, '');
+            
+            // FIXED: Removed .toLowerCase() so it matches your exact capitalized file names
+            const cleanName = student.name.trim().replace(/\s+/g, '');
             img.src = student.file || (cleanName + '.png');
             img.alt = student.name;
             img.className = 'student-face';
@@ -679,7 +681,9 @@
                 row.className = 'feeling-student-row';
                 
                 const img = document.createElement('img');
-                const cleanName = student.name.trim().toLowerCase().replace(/\s+/g, '');
+                
+                // FIXED: Removed .toLowerCase() here as well
+                const cleanName = student.name.trim().replace(/\s+/g, '');
                 img.src = student.file || (cleanName + '.png');
                 img.className = 'student-face';
 
